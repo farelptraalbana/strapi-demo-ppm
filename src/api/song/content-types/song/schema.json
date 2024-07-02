@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "singularName": "song",
+    "pluralName": "songs",
+    "displayName": "Song"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "idSong": {
+      "type": "uid"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "keyYoutube": {
+      "type": "text"
+    },
+    "audio": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "playlist": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::playlist.playlist",
+      "inversedBy": "songs"
+    },
+    "album": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::album.album",
+      "inversedBy": "songs"
+    },
+    "artist": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::artist.artist",
+      "inversedBy": "songs"
+    }
+  }
+}

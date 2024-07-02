@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "playlists",
+  "info": {
+    "singularName": "playlist",
+    "pluralName": "playlists",
+    "displayName": "Playlist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idPlaylist": {
+      "type": "uid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "deskripsi": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "songs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::song.song",
+      "mappedBy": "playlist"
+    }
+  }
+}
